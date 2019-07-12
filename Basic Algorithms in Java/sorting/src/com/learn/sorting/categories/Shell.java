@@ -7,6 +7,7 @@ public class Shell {
         int h = 1;
         int subNum = 4;
 
+        // find an appropriate number of a sub array.
         while (h < N/subNum) {
             h = subNum * h + 1;
         }
