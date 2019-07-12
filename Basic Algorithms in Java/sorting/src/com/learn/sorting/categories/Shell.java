@@ -5,7 +5,7 @@ public class Shell {
     public void sort(Comparable[] a) {
         int N = a.length;
         int h = 1;
-        int subNum = 4;
+        int subNum = 3;
 
         // find an appropriate number of a sub array.
         while (h < N/subNum) {
