@@ -5,9 +5,10 @@ public class Shell {
     public void sort(Comparable[] a) {
         int N = a.length;
         int h = 1;
+        int subNum = 4;
 
-        while (h < N/4) {
-            h = 4 * h + 1;
+        while (h < N/subNum) {
+            h = subNum * h + 1;
         }
 
         while (h >= 1) {
@@ -16,6 +17,7 @@ public class Shell {
                     exchange(a, j, j - h);
                 }
             }
+            h = h/subNum ;
         }
     }
 
