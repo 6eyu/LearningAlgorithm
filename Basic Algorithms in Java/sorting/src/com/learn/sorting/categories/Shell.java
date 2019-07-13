@@ -22,6 +22,29 @@ public class Shell {
         }
     }
 
+    // bad implementation: inefficiency n^3
+    public void sort2(Comparable[] a) {
+        int N = a.length;
+        int sub = 3;
+        int h = N/sub;
+
+        while (h >= 1) {
+            for(int i = 0; i < h; i++) {
+                for(int j = i; j < N; j += h) {
+                    int min = j;
+                    for(int k = j + h; k < N; k += h) {
+                        if(less(a[k], a[min])){
+                            min = k;
+                        }
+                    }
+                    exchange(a, j, min);
+                }
+            }
+            h--;
+        }
+
+    }
+
     private boolean less(Comparable v, Comparable selected) {
         return v.compareTo(selected) < 0;
     }

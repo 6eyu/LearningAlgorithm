@@ -14,7 +14,6 @@ public class SortApplication {
         for(String s : a) {
             System.out.print(s);
         }
-
     }
 }
 
