@@ -19,6 +19,15 @@ public class Merge {
     }
 
 
+    public void bottomUpSort(Comparable[] a) {
+        int n = a.length;
+        aux = new Comparable[n];
+        for(int sz = 1; sz < n; sz = sz + sz) {
+            for(int lo = 0; lo < n - sz; lo += sz + sz) {
+                merge(a, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, n - 1));
+            }
+        }
+    }
 
     private void merge(Comparable[] a, int lo, int mid, int hi) {
 
