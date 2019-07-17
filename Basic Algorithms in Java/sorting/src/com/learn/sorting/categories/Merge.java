@@ -7,11 +7,15 @@ public class Merge {
 
     public void topDownSort(Comparable[] a) {
         aux = new Comparable[a.length];
-
+        topDown(a, 0, a.length - 1);
     }
 
-    private void topDown() {
-
+    private void topDown(Comparable[] a, int lo, int hi) {
+        if(hi <= lo) return;
+        int mid = lo + (hi - lo)/2;
+        topDown(a, lo, mid);
+        topDown(a, mid + 1, hi);
+        merge(a, lo, mid, hi);
     }
 
 
