@@ -5,7 +5,12 @@ public class Quick {
 
     }
 
-    private void quick(){
+    private void quick() {
 
     }
+
+    private int partition() {
+        return 0;
+    }
+
 }
