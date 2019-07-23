@@ -2,11 +2,14 @@ package com.learn.sorting.categories;
 
 public class Quick {
     public void sort(Comparable[] a) {
-
+        quick(a, 0, a.length - 1);
     }
 
-    private void quick() {
-
+    private void quick(Comparable[] a, int lo, int hi) {
+        if(hi <= lo) return;
+        int j = partition(a, lo, hi);
+        quick(a, lo, j-1);
+        quick(a, j+1, hi);
     }
 
     private int partition(Comparable[] a, int lo, int hi) {
